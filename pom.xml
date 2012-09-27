@@ -50,11 +50,63 @@
 			<version>${axisVersion}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.0.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-discovery</groupId>
+			<artifactId>commons-discovery</artifactId>
+			<version>0.5</version>
+			<scope>provided</scope>
+		</dependency>	
+
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j</artifactId>
+			<version>1.6.2</version>
+			<scope>provided</scope>
+		</dependency>	
+
 	</dependencies>
 
 	<build>
 
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack-source</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeGroupIds>org.apache.axis</includeGroupIds>
+							<!--
+							<includes>org/atmosphere/**</includes>
+							<includeScope>compile</includeScope>
+							-->
+							<failOnMissingClassifierArtifact>false</failOnMissingClassifierArtifact>
+							<outputDirectory>${project.build.directory}/classes</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 			<!-- produce bundle -->
 			<plugin>
 				<groupId>org.apache.felix</groupId>
@@ -82,7 +134,7 @@
 						</Import-Package>
 						<Export-Package>
 							org.apache.axis*;version=${axisVersion},
-							javax.*;version=0.0.0
+							javax.xml*;version=0.0.0
 						</Export-Package>
 					</instructions>
 				</configuration>
