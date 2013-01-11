@@ -26,8 +26,8 @@
 	<properties>
 		<axisVersion>1.4</axisVersion>
 		<discoveryVersion>[0.5,1.0)</discoveryVersion>
-		<loggingVersion>[1.0,2.0)</loggingVersion>
-		<httpVersion>[3.0,4.0)</httpVersion>
+		<loggingVersion>[1.0.4,2.0)</loggingVersion>
+		<httpVersion>[3.1,4.0)</httpVersion>
 	</properties>
 
 	<dependencies>
@@ -36,46 +36,45 @@
 			<groupId>org.apache.axis</groupId>
 			<artifactId>axis</artifactId>
 			<version>${axisVersion}</version>
+			<optional>true</optional>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.axis</groupId>
 			<artifactId>axis-jaxrpc</artifactId>
 			<version>${axisVersion}</version>
+			<optional>true</optional>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.axis</groupId>
 			<artifactId>axis-saaj</artifactId>
 			<version>${axisVersion}</version>
+			<optional>true</optional>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
-			<version>1.0.4</version>
-			<scope>provided</scope>
+			<version>${loggingVersion}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-httpclient</groupId>
 			<artifactId>commons-httpclient</artifactId>
-			<version>3.1</version>
-			<scope>provided</scope>
+			<version>${httpVersion}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-discovery</groupId>
 			<artifactId>commons-discovery</artifactId>
-			<version>0.5</version>
-			<scope>provided</scope>
+			<version>${discoveryVersion}</version>
 		</dependency>	
 
 		<dependency>
 			<groupId>wsdl4j</groupId>
 			<artifactId>wsdl4j</artifactId>
 			<version>1.6.2</version>
-			<scope>provided</scope>
 		</dependency>	
 
 	</dependencies>
