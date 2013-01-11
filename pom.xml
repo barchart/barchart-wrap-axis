@@ -25,9 +25,9 @@
 
 	<properties>
 		<axisVersion>1.4</axisVersion>
-		<discoveryVersion>[0.5,1.0)</discoveryVersion>
-		<loggingVersion>[1.0.4,2.0)</loggingVersion>
-		<httpVersion>[3.1,4.0)</httpVersion>
+		<discoveryVersion>0.5</discoveryVersion>
+		<loggingVersion>1.0.4</loggingVersion>
+		<httpVersion>3.1</httpVersion>
 	</properties>
 
 	<dependencies>
