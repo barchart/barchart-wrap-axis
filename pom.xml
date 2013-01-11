@@ -10,7 +10,7 @@
 
 	<groupId>com.barchart.wrap</groupId>
 	<artifactId>barchart-wrap-axis</artifactId>
-	<version>1.4-build005-SNAPSHOT</version>
+	<version>1.4-build005</version>
 	<packaging>bundle</packaging>
 
 	<scm>
