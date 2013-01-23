@@ -95,10 +95,12 @@
 						</goals>
 						<configuration>
 							<includeGroupIds>org.apache.axis</includeGroupIds>
-							<!--
-							<includes>org/atmosphere/**</includes>
-							<includeScope>compile</includeScope>
-							-->
+							<excludes>
+								**\/javax\/xml\/namespace,
+								**\/javax\/xml\/namespace\/*,
+								**\/javax\/xml\/soap,
+								**\/javax\/xml\/soap\/*
+							</excludes>
 							<failOnMissingClassifierArtifact>false</failOnMissingClassifierArtifact>
 							<outputDirectory>${project.build.directory}/classes</outputDirectory>
 						</configuration>
@@ -133,7 +135,8 @@
 						</Import-Package>
 						<Export-Package>
 							org.apache.axis*;version=${axisVersion},
-							javax.xml.rpc*;version=0.0.0
+							javax.xml.rpc*;version=0.0.0,
+							javax.xml.messaging*;version=0.0.0
 						</Export-Package>
 					</instructions>
 				</configuration>
