@@ -26,7 +26,7 @@
 	<properties>
 		<axisVersion>1.4</axisVersion>
 		<discoveryVersion>0.5</discoveryVersion>
-		<loggingVersion>1.0.4</loggingVersion>
+		<loggingVersion>1.1.1</loggingVersion>
 		<httpVersion>3.1</httpVersion>
 	</properties>
 
@@ -57,12 +57,19 @@
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>${loggingVersion}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-httpclient</groupId>
 			<artifactId>commons-httpclient</artifactId>
 			<version>${httpVersion}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
